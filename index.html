@@ -144,7 +144,7 @@
 
       <!-- vocabulary -->
 
-      <section class="vocabulary text-center my-20">
+      <section class="vocabulary text-center my-0 md:my-20">
         <h3 class="text-3xl mb-8">
           <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h3>
@@ -152,8 +152,8 @@
           id="lessons-container"
           class="flex flex-wrap gap-5 justify-center"
         ></div>
-        <div class="bg-[#f8f8f8]">
-          <div id="empty-container" class="mt-8 px-8 py-20 items-center">
+        <div class="bg-[#f8f8f8] rounded-2xl">
+          <div id="empty-container" class="mt-10 px-8 py-20 items-center">
             <p class="bangla text-[#79716B]">
               আপনি এখনো কোন <span class="english">Lesson Select</span> করেন নি
             </p>
@@ -161,7 +161,10 @@
               একটি <span class="english">Lesson Select</span> করুন।
             </h3>
           </div>
-          <div id="card-container" class="grid grid-cols-3 gap-5 p-5"></div>
+          <div
+            id="card-container"
+            class="grid grid-cols-1 md:grid-cols-3 gap-5 p-5"
+          ></div>
         </div>
       </section>
     </main>
