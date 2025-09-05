@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Janala | Home</title>
     <!-- daisy and tailwind cdn -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
@@ -12,7 +13,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- favicon -->
+
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
+
     <!-- font awesome cdn -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -20,11 +26,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <!-- css links -->
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="english">
     <!-- navbar -->
+
     <nav>
       <div class="navbar bg-[#badeff42] bg-base-100 shadow-sm">
         <div class="navbar-start">
@@ -66,16 +75,16 @@
               </li>
             </ul>
           </div>
-          <a class="btn btn-ghost text-xl"
+          <a class="btn-ghost text-xl"
             ><h6 class="flex items-center">
               <span class="text-xl font-semibold">English</span>
               <span><img src="assets/logo.png" alt="" /></span>
-              <span class="bangla text-xl">জানালা</span>
+              <span class="bangla text-xl font-semibold">জানালা</span>
             </h6></a
           >
         </div>
         <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
+          <ul class="menu menu-horizontal gap-4 px-1">
             <li>
               <a class="btn border-[#422AD5] bg-[#badeff42] text-[#422AD5]"
                 ><i class="fa-solid fa-circle-question"></i>FAQ</a
@@ -96,39 +105,65 @@
       </div>
     </nav>
 
-    <!-- banner -->
-    <div
-      class="banner flex justify-between flex-col-reverse md:flex-row text-center md:text-left gap-20 px-5 md:px-20 py-26 items-center"
-    >
-      <div class="div1">
-        <h3 class="font-bold text-5xl mb-8">
-          <span class="text-[#00BCFF]">English</span> is Easy!!
+    <main class="px-5 md:px-20">
+      <!-- banner -->
+
+      <div
+        class="banner flex justify-between flex-col-reverse md:flex-row text-center md:text-left gap-20 py-26 items-center"
+      >
+        <div class="div1">
+          <h3 class="font-bold text-4xl mb-8">
+            <span class="text-[#00BCFF]">English</span> is Easy!!
+          </h3>
+          <p class="bangla">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+            অন্য একটি Level এ
+          </p>
+          <form class="flex flex-col gap-6 w-full md:w-[60%] mt-5">
+            <input
+              class="py-2 rounded-sm border-[#18181b33]"
+              type="text"
+              placeholder="     Enter Your Name"
+              name=""
+              id=""
+            />
+            <input
+              class="py-2 rounded-sm border-[#18181b33]"
+              type="password"
+              name=""
+              id=""
+            />
+            <button class="btn btn-primary w-30">Get Started</button>
+          </form>
+        </div>
+        <div class="div2">
+          <img src="assets/hero-student.png" alt="" />
+        </div>
+      </div>
+
+      <!-- vocabulary -->
+
+      <section class="vocabulary text-center my-20">
+        <h3 class="text-3xl mb-8">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h3>
-        <p class="bangla">
-          আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
-          আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
-          অন্য একটি Level এ
-        </p>
-        <form class="flex flex-col gap-6 w-full md:w-[60%] mt-5">
-          <input
-            class="py-2 rounded-sm border-[#18181b33]"
-            type="text"
-            placeholder="     Enter Your Name"
-            name=""
-            id=""
-          />
-          <input
-            class="py-2 rounded-sm border-[#18181b33]"
-            type="password"
-            name=""
-            id=""
-          />
-          <button class="btn btn-primary w-30">Get Started</button>
-        </form>
-      </div>
-      <div class="div2">
-        <img src="assets/hero-student.png" alt="" />
-      </div>
-    </div>
+        <ul id="lessons-container" class="flex gap-5 justify-center"></ul>
+        <div class="bg-[#f8f8f8] mt-8 px-8 py-20 items-center">
+          <p class="bangla text-[#79716B]">
+            আপনি এখনো কোন <span class="english">Lesson Select</span> করেন নি
+          </p>
+          <h3 class="bangla font-medium text-4xl pt-6">
+            একটি <span class="english">Lesson Select</span> করুন।
+          </h3>
+        </div>
+        <div class="bg-[#f8f8f8] mt-8 px-8 py-20 items-center">
+          <h4>Eager</h4>
+          <p>Meaning /Pronounciation</p>
+          <h4 class="bangla">"আগ্রহী / ইগার"</h4>
+        </div>
+      </section>
+    </main>
+    <script src="script/script.js"></script>
   </body>
 </html>
