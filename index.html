@@ -35,7 +35,7 @@
     <!-- navbar -->
 
     <nav>
-      <div class="navbar bg-[#badeff42] bg-base-100 shadow-sm">
+      <div class="navbar px-20 bg-[#badeff42] bg-base-100 shadow-sm">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -148,22 +148,23 @@
         <h3 class="text-3xl mb-8">
           <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h3>
-        <ul id="lessons-container" class="flex gap-5 justify-center"></ul>
-        <div class="bg-[#f8f8f8] mt-8 px-8 py-20 items-center">
-          <p class="bangla text-[#79716B]">
-            আপনি এখনো কোন <span class="english">Lesson Select</span> করেন নি
-          </p>
-          <h3 class="bangla font-medium text-4xl pt-6">
-            একটি <span class="english">Lesson Select</span> করুন।
-          </h3>
-        </div>
-        <div class="bg-[#f8f8f8] mt-8 px-8 py-20 items-center">
-          <h4>Eager</h4>
-          <p>Meaning /Pronounciation</p>
-          <h4 class="bangla">"আগ্রহী / ইগার"</h4>
+        <div
+          id="lessons-container"
+          class="flex flex-wrap gap-5 justify-center"
+        ></div>
+        <div class="bg-[#f8f8f8]">
+          <div id="empty-container" class="mt-8 px-8 py-20 items-center">
+            <p class="bangla text-[#79716B]">
+              আপনি এখনো কোন <span class="english">Lesson Select</span> করেন নি
+            </p>
+            <h3 class="bangla font-medium text-4xl pt-6">
+              একটি <span class="english">Lesson Select</span> করুন।
+            </h3>
+          </div>
+          <div id="card-container" class="grid grid-cols-3 gap-5 p-5"></div>
         </div>
       </section>
     </main>
-    <script src="script/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
