@@ -6,11 +6,13 @@ const getData = () => {
     .then((lessons) => lessonsLoad(lessons.data));
 };
 // btn style remove
-const btnStyleRemove = () => {
+const btnStyleRemove = (id) => {
   const btns = document.querySelectorAll(".lessons-btn");
   btns.forEach((btn) => {
     btn.classList.remove("active");
   });
+  const btn = document.getElementById(`lesson-btn-${id}`);
+  btn.classList.add("active");
 };
 
 const lessonsLoad = (info) => {
@@ -36,9 +38,7 @@ const lessonOFWords = (id) => {
   fetch(url)
     .then((trs) => trs.json())
     .then((words) => {
-      const btn = document.getElementById(`lesson-btn-${id}`);
-      btn.classList.add("active");
-      btnStyleRemove();
+      btnStyleRemove(id);
       wordsLoad(words.data);
     });
 };
