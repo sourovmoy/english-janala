@@ -5,6 +5,13 @@ const getData = () => {
     .then((res) => res.json())
     .then((lessons) => lessonsLoad(lessons.data));
 };
+// btn style remove
+const btnStyleRemove = () => {
+  const btns = document.querySelectorAll(".lessons-btn");
+  btns.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+};
 
 const lessonsLoad = (info) => {
   const container = document.getElementById("lessons-container");
@@ -12,9 +19,7 @@ const lessonsLoad = (info) => {
   info.forEach((data) => {
     const div = document.createElement("div");
     div.innerHTML = `
-    <button onclick="lessonOFWords(${data.level_no})" class="btn border-[#422AD5] text-[#422AD5]">
-              <span><img src="assets/fa-book-open.png" alt="" /></span
-              >Lesson-${data.level_no}
+    <button id="lesson-btn-${data.level_no}" onclick="lessonOFWords(${data.level_no})" class="btn lessons-btn border-[#422AD5] text-[#422AD5]"><i class="fa-solid fa-book-open"></i>Lesson-${data.level_no}
             
     </button>
     
@@ -22,6 +27,7 @@ const lessonsLoad = (info) => {
     container.append(div);
   });
 };
+
 // click button to call the words function
 
 const lessonOFWords = (id) => {
@@ -29,7 +35,12 @@ const lessonOFWords = (id) => {
 
   fetch(url)
     .then((trs) => trs.json())
-    .then((words) => wordsLoad(words.data));
+    .then((words) => {
+      const btn = document.getElementById(`lesson-btn-${id}`);
+      btn.classList.add("active");
+      btnStyleRemove();
+      wordsLoad(words.data);
+    });
 };
 const wordsLoad = (words) => {
   // for remove default
