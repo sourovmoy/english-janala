@@ -150,8 +150,9 @@
         </h3>
         <div
           id="lessons-container"
-          class="flex flex-wrap gap-5 justify-center"
+          class="flex flex-wrap gap-5 justify-center mb-11"
         ></div>
+
         <div class="bg-[#f8f8f8] rounded-2xl">
           <div id="empty-container" class="mt-10 px-8 py-20 items-center">
             <p class="bangla text-[#79716B]">
@@ -161,6 +162,15 @@
               একটি <span class="english">Lesson Select</span> করুন।
             </h3>
           </div>
+
+          <!-- spinner -->
+          <section
+            id="spinner"
+            class="flex justify-center items-center py-14 hidden"
+          >
+            <span class="loading loading-spinner loading-xl"></span>
+          </section>
+          <!-- card container -->
           <div
             id="card-container"
             class="grid grid-cols-1 md:grid-cols-3 gap-5 p-5"

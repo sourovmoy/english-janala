@@ -29,10 +29,21 @@ const lessonsLoad = (info) => {
     container.append(div);
   });
 };
+// spinner management
+const spinner = (statement) => {
+  if (statement == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("card-container").classList.add("hidden");
+  } else {
+    document.getElementById("spinner").classList.add("hidden");
+    document.getElementById("card-container").classList.remove("hidden");
+  }
+};
 
 // click button to call the words function
 
 const lessonOFWords = (id) => {
+  spinner(true);
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
 
   fetch(url)
@@ -67,6 +78,8 @@ const wordsLoad = (words) => {
          
       `;
     emptyContainer.append(div2);
+    spinner(false);
+    return;
   } else {
     // get all the word
     words.forEach((word) => {
@@ -97,6 +110,7 @@ const wordsLoad = (words) => {
       container.append(div);
     });
   }
+  spinner(false);
 };
 // for modal words details wordsLoad
 const loadModalWord = (id) => {
@@ -126,10 +140,9 @@ const loadModalWord = (id) => {
                 ${id.sentence ? id.sentence : "Sentence পাওয়া যাই নি"}
               </h6>
               <h4 class="text-left py-4 font-bold ">সমার্থক শব্দ গুলো</h5>
-             <div class="flex gap-4">
-               <p class=" bg-[#d7e4ef] rounded-md p-2 ">${
-                 id.synonyms[0] ? id.synonyms[0] : ""
-               }</p>
+             <div class="flex gap-4"><p class=" bg-[#d7e4ef] rounded-md p-2">${
+               id.synonyms[0] ? id.synonyms[0] : ""
+             }</p>
                <p class=" bg-[#d7e4ef] rounded-md p-2">${
                  id.synonyms[1] ? id.synonyms[1] : ""
                }</p>
