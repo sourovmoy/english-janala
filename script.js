@@ -15,6 +15,15 @@ const btnStyleRemove = (id) => {
   btn.classList.add("active");
 };
 
+// audio
+
+function pronounceWord(word) {
+  console.log(word);
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 const lessonsLoad = (info) => {
   const container = document.getElementById("lessons-container");
   container.innerHTML = "";
@@ -101,7 +110,9 @@ const wordsLoad = (words) => {
                 })" class="p-3 bg-[#1a91ff1a] rounded-md"
                   ><i class="fa-solid fa-circle-question"></i
                 ></button>
-                <button class="p-3 bg-[#1a91ff1a] rounded-md"
+                <button onclick="pronounceWord('${
+                  word.word
+                }')" class="p-3 bg-[#1a91ff1a] rounded-md"
                   ><i class="fa-solid fa-volume-high"></i
                 ></button>
               </div>
